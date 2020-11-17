@@ -1,6 +1,7 @@
 package com.common.pojo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @ClassName User
@@ -9,12 +10,11 @@ import java.io.Serializable;
  * @Date 14:36 2020/11/9
  */
 @SuppressWarnings("serial")
-public class TUser implements Serializable {
+public class Product implements Serializable {
     private Integer id;
     private String name;
-    private Integer age;
-    private String addr;
-    private String phone;
+    private BigDecimal price;
+    private Integer num;
 
     public Integer getId() {
         return id;
@@ -32,38 +32,36 @@ public class TUser implements Serializable {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
-    public String getAddr() {
-        return addr;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setAddr(String addr) {
-        this.addr = addr;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public Product(Integer id, String name, BigDecimal price, Integer num) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.num = num;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", addr='" + addr + '\'' +
-                ", phone='" + phone + '\'' +
+                ", price=" + price +
+                ", num=" + num +
                 '}';
     }
 }

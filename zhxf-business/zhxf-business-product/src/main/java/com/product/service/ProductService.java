@@ -1,4 +1,4 @@
-package com.product.api;
+package com.product.service;
 
 /**
  * @ClassName ProductController
@@ -8,5 +8,5 @@ package com.product.api;
  */
 public interface ProductService {
 
-    String getInfo();
+    String getProdInfo();
 }

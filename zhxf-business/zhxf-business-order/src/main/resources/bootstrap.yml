@@ -16,16 +16,3 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: @profiles.active@
-
-dubbo:
-  scan:
-    base-packages: com.order
-  protocol:
-    name: dubbo
-    port: ${dubbo_port:20881}
-  registry:
-    address: nacos://172.16.1.176:8848
-  application:
-    qos-enable: false
-  consumer:
-    check: false

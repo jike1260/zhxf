@@ -14,12 +14,6 @@
     <description>应用层服务</description>
 
     <dependencies>
-        <!-- 引入被调用的服务 -->
-        <dependency>
-            <groupId>com.order</groupId>
-            <artifactId>zhxf-business-order</artifactId>
-            <version>3.0</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,10 +29,10 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-        <!--dubbo-->
+        <!-- feign -->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

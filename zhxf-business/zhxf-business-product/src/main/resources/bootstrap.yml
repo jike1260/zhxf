@@ -17,16 +17,3 @@ spring:
   profiles:
     active: @profiles.active@
 
-dubbo:
-  scan:
-    base-packages: com.product
-  protocol:
-    name: dubbo
-    port: ${dubbo_port:20891}
-  registry:
-    address: nacos://172.16.1.176:8848
-  application:
-    qos-enable: false
-  consumer:
-    check: false
-
