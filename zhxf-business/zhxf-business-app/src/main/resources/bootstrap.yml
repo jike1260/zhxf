@@ -1,0 +1,22 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS-HOST:zhxf-app}:${NACOS-PORT:8848}
+#        server-addr: ${NACOS-HOST:172.16.1.176}:${NACOS-PORT:8848},${NACOS-HOST:172.16.1.176}:${NACOS-PORT:8849},${NACOS-HOST:172.16.1.176}:${NACOS-PORT:8850}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: @profiles.active@
+# springboot2.1需要设定 避免bean覆盖
+#  main:
+#    allow-bean-definition-overriding: true
+

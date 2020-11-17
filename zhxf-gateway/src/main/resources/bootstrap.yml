@@ -1,0 +1,31 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS-HOST:zhxf-gateway}:${NACOS-PORT:8848}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: app_route
+          uri: lb://zhxf-business-app
+          order: 1
+          predicates:
+            - Path=/app/**
+          filters:
+            - StripPrefix=1
+
+  profiles:
+    active: @profiles.active@
+
